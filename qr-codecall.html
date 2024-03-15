@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Keypad</title>
+    <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="qrcode.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="jquery-2.0.2.js"></script>
+
+<style>
+
+
+::placeholder {
+/* Your styles here */
+color:white ;
+font-size:23px;
+}
+</style>
+
+<style>
+.original-button {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 32px;
+    border: 15px solid lightblue;
+ width: 190px;
+  height:  180px;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(180deg, rgba(27, 37, 168, 1) 28%, rgba(204, 204, 204, 1));
+}
+
+.original-button:hover {
+  transform: translateY(2px);
+  box-shadow: 0 0 rgba(0, 0, 0, 0);
+}
+
+</style>  
+<style>
+textarea{
+    font-size: 12px !important;
+}
+</style>
+<style>
+.reload {
+  font-family: Lucida Sans Unicode
+}
+
+</style>
+  <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  
+    <style>
+      .zoom-tool-bar {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 31px;
+        padding: 3px 0;
+        background: rgba(49, 65, 82, 0.7);
+        font-size: 13px;
+        z-index: 9999;
+        color: #fff;
+      }
+
+      .zoom-tool-bar i {
+        color: #77b3ff;
+        font-size: 16px;
+      }
+    </style>
+</head>
+  <body onload="getNumber()">
+<div id="content" align="center">
+
+<font size="7"><a onclick="myFunction()" style="text-decoration:none;"  href="javascript:void(0);"><span class=reload>&#x21bb;</span></a>
+</font>
+
+    <div class="background"></div>
+<form action="/tutorial/action.html">
+<center>
+ <input align="center" class="original-button"  type="reset" value="ΚΡΥΨΕ">
+</center>
+<center>
+    <textarea  type="text" class="original-button" placeholder="ΕΙΣΑΓΕΤΕ ΝΟΥΜΕΡΟ" style="width:1120px;padding: 20px; margin: 10px;" class="NumberShow" id="NumberShow"  value="" ></textarea>
+    <a href="#">ΕΠΙΛΟΓΕΣ ΠΛΑΣΙΟΥ ΓΡΑΜΜΑΤΟΣΕΙΡΑΣ</a>
+<script type="text/javascript">//<![CDATA[
+
+
+$('a').on('click',function(e){
+    $("textarea")
+        .css({
+            'cssText':'font-size:1.9rem !important',
+            "color":"lightblue"
+        });
+    e.preventDefault();
+});
+
+
+  //]]></script>
+</center>
+</form>
+    <p style="line-height: 31.2;"></p>
+    <audio id="keyAudio"></audio>
+<center>
+  <table class="makecenter" style="">
+      <tbody style="align="center">
+        <tr>
+          <td>
+           <table class="keypad" align="center" style="left:427px;">
+            <tbody align="center" style="border-radius:345px;">
+                <tr>
+<pre></pre><pre></pre><pre></pre>
+                  <td>
+                    <a class="original-button"  href="javascript:void(0);"><span class="num" onclick="inputNumber('1')">1</span></a>
+                  </td>
+                  <td>
+                    <a class="original-button" href="javascript:void(0);"><span class="num" onclick="inputNumber('2')">2</span></a>
+                  </td>
+                  <td>
+                    <a class="original-button" href="javascript:void(0);"><span class="num" onclick="inputNumber('3')">3</span></a>
+                  </td>
+                </tr>
+
+                <tr>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                  <td>
+
+                    <a class="original-button" href="javascript:void(0);"><span class="num" onclick="inputNumber('4')">4</span></a>
+                  </td>
+                  <td>
+
+
+
+                    <a class="original-button" href="javascript:void(0);"><span class="num" onclick="inputNumber('5')">5</span></a>
+                  </td>
+                  <td>
+                    <a class="original-button" href="javascript:void(0);"><span class="num" onclick="inputNumber('6')">6</span></a>
+                  </td>
+                </tr>
+                <tr>
+
+                  <td>
+
+                    <a class="original-button" href="javascript:void(0);"><span class="num" onclick="inputNumber('7')">7</span></a>
+                  </td>
+                  <td>
+
+                    <a class="original-button" href="javascript:void(0);"><span class="num" onclick="inputNumber('8')">8</span></a>
+                  </td>
+                  <td>
+
+                    <a class="original-button" href="javascript:void(0);"><span class="num" onclick="inputNumber('9')">9</span></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+
+                    <a class="original-button" href="javascript:void(0);"><span class="num" onclick="inputNumber('*')">*</span></a>
+                  </td>
+                  <td>
+
+                    <a class="original-button" href="javascript:void(0);"><span class="num" onclick="inputNumber('0')">0</span></a>
+                  </td>
+                  <td>
+
+                    <a class="original-button" href="javascript:void(0);"><span class="num" onclick="inputNumber('#')">#</span></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+<br/><br/><br/>
+            <table class="specCharacter">
+              <tbody>
+                <tr>
+                  <td>
+                    <a class="original-button" href="javascript:void(0);"><span class="spec" onclick="inputNumber('+')">+</span></a>
+                  </td>
+                  <td>
+                    <a class="original-button" href="javascript:void(0);"><span class="spec" onclick="inputNumber(',')">,</span></a>
+                  </td>
+                  <td>
+                    <a class="original-button" href="javascript:void(0);"><span class="spec" onclick="inputNumber(';')">;</span></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+<br/>
+            <table class="ActionButton">
+              <tr>
+                <td>
+                  <a href="javascript:void(0);" onclick="btnShare()"><img class="button" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDMxMC4wMDIgMzEwLjAwMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzEwLjAwMiAzMTAuMDAyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjEyOHB4IiBoZWlnaHQ9IjEyOHB4Ij4KPGc+Cgk8cGF0aCBkPSJNMTIwLjYwNSw3MC42MDdsMTkuMzk2LTE5LjM5NXYxNTMuNzg2YzAsOC4yODQsNi43MTYsMTUsMTUsMTVjOC4yODQsMCwxNS02LjcxNiwxNS0xNVY1MS4yMTNsMTkuMzk0LDE5LjM5NCAgIGMyLjkyOSwyLjkyOSw2Ljc2Nyw0LjM5NCwxMC42MDYsNC4zOTRjMy44MzksMCw3LjY3OC0xLjQ2NCwxMC42MDYtNC4zOTRjNS44NTgtNS44NTgsNS44NTgtMTUuMzU1LDAtMjEuMjEzTDE2NS42MSw0LjM5NiAgIGMtMC4zNTItMC4zNTEtMC43MjEtMC42ODMtMS4xMDQtMC45OTdjLTAuMTY2LTAuMTM2LTAuMzQxLTAuMjU0LTAuNTEtMC4zODFjLTAuMjIyLTAuMTY3LTAuNDM5LTAuMzM3LTAuNjctMC40OTIgICBjLTAuMjA3LTAuMTM5LTAuNDIyLTAuMjU5LTAuNjM1LTAuMzg2Yy0wLjIwNy0wLjEyNS0wLjQxLTAuMjU1LTAuNjI0LTAuMzY5Yy0wLjIxNy0wLjExNi0wLjQzOS0wLjIxNC0wLjY2MS0wLjMxOCAgIGMtMC4yMjMtMC4xMDYtMC40NDEtMC4yMTYtMC42Ny0wLjMxMWMtMC4yMTQtMC4wODktMC40MzItMC4xNi0wLjY0OS0wLjIzOGMtMC4yNDQtMC4wODgtMC40ODUtMC4xODItMC43MzYtMC4yNTcgICBjLTAuMjE2LTAuMDY1LTAuNDM1LTAuMTEzLTAuNjUyLTAuMTY4Yy0wLjI1Ni0wLjA2NS0wLjUxLTAuMTM3LTAuNzcxLTAuMTg4Yy0wLjI1LTAuMDQ5LTAuNTAzLTAuMDc4LTAuNzU1LTAuMTE1ICAgYy0wLjIzMi0wLjAzMy0wLjQ2LTAuMDc3LTAuNjk1LTAuMWMtMC40NjItMC4wNDUtMC45MjUtMC4wNjctMS4zODktMC4wN2MtMC4wMywwLTAuMDU5LTAuMDA0LTAuMDg5LTAuMDA0ICAgYy0wLjAyOSwwLTAuMDU5LDAuMDA0LTAuMDg4LDAuMDA0Yy0wLjQ2NCwwLjAwMi0wLjkyOCwwLjAyNS0xLjM5MSwwLjA3Yy0wLjIzLDAuMDIzLTAuNDUzLDAuMDY2LTAuNjgsMC4wOTggICBjLTAuMjU4LDAuMDM3LTAuNTE2LDAuMDY3LTAuNzcxLDAuMTE4Yy0wLjI1NCwwLjA1LTAuNSwwLjEyLTAuNzQ5LDAuMTgzYy0wLjIyNiwwLjA1Ny0wLjQ1MiwwLjEwNi0wLjY3NiwwLjE3MyAgIGMtMC4yNDEsMC4wNzMtMC40NzYsMC4xNjQtMC43MTIsMC4yNDljLTAuMjI1LDAuMDgxLTAuNDUyLDAuMTU1LTAuNjc0LDAuMjQ3Yy0wLjIyLDAuMDkxLTAuNDMsMC4xOTgtMC42NDQsMC4yOTkgICBjLTAuMjMsMC4xMDgtMC40NjIsMC4yMTEtMC42ODgsMC4zMzFjLTAuMjA0LDAuMTA5LTAuMzk2LDAuMjMzLTAuNTk1LDAuMzUyYy0wLjIyMywwLjEzMi0wLjQ0NywwLjI1OC0wLjY2NCwwLjQwMyAgIGMtMC4yMTcsMC4xNDUtMC40MiwwLjMwNy0wLjYyOSwwLjQ2MmMtMC4xODQsMC4xMzctMC4zNzEsMC4yNjQtMC41NDksMC40MTFjLTAuMzY1LDAuMjk5LTAuNzE0LDAuNjE2LTEuMDQ5LDAuOTQ3ICAgYy0wLjAxNiwwLjAxNi0wLjAzMywwLjAyOS0wLjA1LDAuMDQ1bC00NS4wMDIsNDVjLTUuODU4LDUuODU4LTUuODU4LDE1LjM1NSwwLDIxLjIxM0MxMDUuMjUsNzYuNDY1LDExNC43NDgsNzYuNDYzLDEyMC42MDUsNzAuNjA3ICAgeiIgZmlsbD0iIzAwMDAwMCIvPgoJPHBhdGggZD0iTTI1NS4wMDEsMTAwLjAwMmgtNDBjLTguMjg0LDAtMTUsNi43MTYtMTUsMTVzNi43MTYsMTUsMTUsMTVoMjV2MTUwaC0xNzB2LTE1MGgyNWM4LjI4NCwwLDE1LTYuNzE2LDE1LTE1cy02LjcxNi0xNS0xNS0xNSAgIGgtNDBjLTguMjg0LDAtMTUsNi43MTYtMTUsMTV2MTgwYzAsOC4yODQsNi43MTYsMTUsMTUsMTVoMjAwYzguMjg0LDAsMTUtNi43MTYsMTUtMTV2LTE4MCAgIEMyNzAuMDAxLDEwNi43MTgsMjYzLjI4NSwxMDAuMDAyLDI1NS4wMDEsMTAwLjAwMnoiIGZpbGw9IiMwMDAwMDAiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" alt="共享 Share"></img></a>
+                </td>
+                <td>
+                  <a id="callButton" href="javascript:void(0);" onclick="btnCall()"><img class="button" src="https://th.bing.com/th/id/OIP.zDsa2MoFeghUwytLWnDKwwHaHa?w=205&h=204&c=7&r=0&o=5&pid=1.7" style="border: 5px solid lightblue;border-radius:350px;" alt="呼叫 Call"></img></a>
+                </td>
+                <td>
+                  <a href="javascript:void(0);" onclick="btnDelete()"><img class="button" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0OTYuMzg1IDQ5Ni4zODUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5Ni4zODUgNDk2LjM4NTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxMjhweCIgaGVpZ2h0PSIxMjhweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTE0OS40MTMsOTguNzc0TDAsMjQ4LjE5N2wxNDkuNDEzLDE0OS40MTNoMzQ2Ljk3MVY5OC43NzRIMTQ5LjQxM3ogTTQ3Ni42OTIsMzc3LjkxOEgxNTcuNTY3TDI3Ljg0NiwyNDguMTk3ICAgIGwxMjkuNzIxLTEyOS43MzFoMzE5LjEyNVYzNzcuOTE4eiIgZmlsbD0iIzAwMDAwMCIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHBvbHlnb24gcG9pbnRzPSIzNzYuNTk2LDE3OC44NjEgMzYyLjY3MywxNjQuOTM3IDI5My4zNDQsMjM0LjI2OSAyMjQuMDE0LDE2NC45MzcgMjEwLjA5MSwxNzguODYxIDI3OS40MjEsMjQ4LjE5MiAgICAgMjEwLjA5MSwzMTcuNTI0IDIyNC4wMTQsMzMxLjQ0NyAyOTMuMzQ0LDI2Mi4xMTUgMzYyLjY3MywzMzEuNDQ3IDM3Ni41OTYsMzE3LjUyNCAzMDcuMjY3LDI0OC4xOTIgICAiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" alt="删除 Delete"></img></a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <iframe src="about:blank" id="callURLOpenFrame"></iframe>
+    <div class="blur" id="blur" style="display: none;"></div>
+    <div class="shareQR" id="shareQR" style="display: none;">
+      <input class="closeBtn" type="submit" name="X" value="X" onclick="window.location.hash = document.getElementById('NumberShow').value;window.location.reload();"></input>
+      <div class="qrcode" id="qrcode"></div>
+    </div>
+</center>
+</div>
+    <script type="text/javascript">//<![CDATA[
+
+
+$('a').on('click',function(e){
+    $("textarea")
+        .css({
+            'cssText':'font-size:1.9rem !important',
+            "color":"lightblue"
+        });
+    e.preventDefault();
+});
+
+
+  //]]></script>
+<script>
+function myFunction()  {
+window.location.reload();
+
+
+}
+</script>
+
+
+  <div class="zoom-tool-bar"></div>
+    <script src="jquery-3.6.0.slim.min.js"></script>
+    <script src="content-zoom-slider.min.js"></script>
+    <script>
+      $(function () {
+        $("#content").contentZoomSlider({
+          toolContainer: ".zoom-tool-bar",
+        });
+
+        //  $("#content").contentZoomSlider({
+        //     toolContainer: ".zoom-tool-bar",
+        //     step: 50,
+        //     zoom: 150,
+        //     max:500
+        //   }); -->
+      });
+    </script>
+  </body>
+</html>
